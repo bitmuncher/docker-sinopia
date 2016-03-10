@@ -9,4 +9,4 @@ You can pull my last build with
 
 <pre>docker pull bitmuncher/sinopia</pre>
 
-
+Default user for htaccess is 'admin' with password 'admin'.
