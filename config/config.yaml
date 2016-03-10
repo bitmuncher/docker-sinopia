@@ -1,0 +1,26 @@
+storage: ./storage
+auth:
+  htpasswd:
+      file: ./htpasswd
+
+uplinks:
+  npmjs:
+      url: https://registry.npmjs.org/
+
+packages:
+  '@*/*':
+    # scoped packages
+    access: $all
+    publish: $authenticated
+
+  '*':
+    access: $all
+    publish: $authenticated
+    proxy: npmjs
+
+logs:
+  - {type: stdout, format: pretty, level: http}
+
+listen:
+  - 0.0.0.0:4873
+
