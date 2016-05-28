@@ -1,4 +1,4 @@
-FROM bitmuncher/debian:latest
+FROM debian:jessie
 
 MAINTAINER Frank Fuhrmann, bitmuncher@mailbox.org
 
