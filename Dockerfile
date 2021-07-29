@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM debian:buster
 
-MAINTAINER Frank Fuhrmann, bitmuncher@mailbox.org
+MAINTAINER Frank Fuhrmann, frank@ff-sec.eu
 
 RUN apt-get update && apt-get install -y libterm-readline-perl-perl
 RUN apt-get install -y nodejs-legacy \
