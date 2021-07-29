@@ -7,8 +7,6 @@ RUN apt-get update && \
   npm install -g sinopia && \
   useradd -ms /bin/bash sinopia && \
   mkdir -p /home/sinopia/storage && \
-  chown -R sinopia:sinopia /home/sinopia && \
-  chmod ug+rx /home/sinopia/start.sh && \
   apt-get -y remove gcc gcc-8 g++ g++-8 make && \
   apt-get -y autoremove && \
   apt-get clean && \
@@ -17,6 +15,9 @@ RUN apt-get update && \
 ADD config/start.sh /home/sinopia/start.sh
 ADD config/config.yaml /home/sinopia/config.yaml
 ADD config/htpasswd /home/sinopia/htpasswd
+
+RUN chown -R sinopia:sinopia /home/sinopia && \
+  chmod ug+rx /home/sinopia/start.sh
 
 USER sinopia
 WORKDIR /home/sinopia
