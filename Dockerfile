@@ -3,7 +3,8 @@ FROM debian:buster
 MAINTAINER Frank Fuhrmann, frank@ff-sec.eu
 
 RUN apt-get update && \
-  apt-get install -y libterm-readline-perl-perl npm && \
+	apt-get install -y libterm-readline-perl-perl npm && \
+  npm i npm@latest -g && \
   npm install -g sinopia && \
   useradd -ms /bin/bash sinopia && \
   mkdir -p /home/sinopia/storage && \
